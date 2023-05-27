@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
             
-            let rootVC = ReviewListViewController()
+            let reviewVC = ReviewListViewController()
+            let rootVC = UINavigationController(rootViewController: reviewVC)
             
             window.rootViewController = rootVC
             window.makeKeyAndVisible()
