@@ -106,9 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				AB2247072A2259AC00FD9D8F /* Application */,
+				AB2247082A225A5200FD9D8F /* Resource */,
 				AB2246CF2A2257FA00FD9D8F /* ViewController.swift */,
-				AB2246D42A2257FB00FD9D8F /* Assets.xcassets */,
-				AB2246D62A2257FB00FD9D8F /* LaunchScreen.storyboard */,
 				AB2246D92A2257FB00FD9D8F /* Info.plist */,
 			);
 			path = BookReview;
@@ -138,6 +137,15 @@
 				AB2246CD2A2257FA00FD9D8F /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		AB2247082A225A5200FD9D8F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AB2246D62A2257FB00FD9D8F /* LaunchScreen.storyboard */,
+				AB2246D42A2257FB00FD9D8F /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
