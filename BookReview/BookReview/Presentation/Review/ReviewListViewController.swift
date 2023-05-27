@@ -8,6 +8,12 @@
 import UIKit
 
 final class ReviewListViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private lazy var presenter = ReviewListPresenter(viewController: self)
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,3 +22,5 @@ final class ReviewListViewController: UIViewController {
     }
 }
 
+
+extension ReviewListViewController: ReviewListProtocol { }
