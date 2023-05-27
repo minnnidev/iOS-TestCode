@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB2246CC2A2257FA00FD9D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2246CB2A2257FA00FD9D8F /* AppDelegate.swift */; };
 		AB2246CE2A2257FA00FD9D8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2246CD2A2257FA00FD9D8F /* SceneDelegate.swift */; };
-		AB2246D02A2257FA00FD9D8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2246CF2A2257FA00FD9D8F /* ViewController.swift */; };
+		AB2246D02A2257FA00FD9D8F /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2246CF2A2257FA00FD9D8F /* ReviewListViewController.swift */; };
 		AB2246D52A2257FB00FD9D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2246D42A2257FB00FD9D8F /* Assets.xcassets */; };
 		AB2246D82A2257FB00FD9D8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2246D62A2257FB00FD9D8F /* LaunchScreen.storyboard */; };
 		AB2246E32A2257FB00FD9D8F /* BookReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2246E22A2257FB00FD9D8F /* BookReviewTests.swift */; };
@@ -19,6 +19,7 @@
 		AB2247002A22591600FD9D8F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB2246FF2A22591600FD9D8F /* Then */; };
 		AB2247032A22591E00FD9D8F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB2247022A22591E00FD9D8F /* Alamofire */; };
 		AB2247062A22592A00FD9D8F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB2247052A22592A00FD9D8F /* Kingfisher */; };
+		AB22470A2A225AB300FD9D8F /* ReviewListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,7 @@
 		AB2246C82A2257FA00FD9D8F /* BookReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2246CB2A2257FA00FD9D8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2246CD2A2257FA00FD9D8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB2246CF2A2257FA00FD9D8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB2246CF2A2257FA00FD9D8F /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
 		AB2246D42A2257FB00FD9D8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB2246D72A2257FB00FD9D8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB2246D92A2257FB00FD9D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		AB2246E82A2257FB00FD9D8F /* BookReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2246EC2A2257FB00FD9D8F /* BookReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITests.swift; sourceTree = "<group>"; };
 		AB2246EE2A2257FB00FD9D8F /* BookReviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 			children = (
 				AB2247072A2259AC00FD9D8F /* Application */,
 				AB2247082A225A5200FD9D8F /* Resource */,
-				AB2246CF2A2257FA00FD9D8F /* ViewController.swift */,
+				AB22470B2A225ABD00FD9D8F /* Presentation */,
 				AB2246D92A2257FB00FD9D8F /* Info.plist */,
 			);
 			path = BookReview;
@@ -146,6 +148,23 @@
 				AB2246D42A2257FB00FD9D8F /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		AB22470B2A225ABD00FD9D8F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AB22470C2A225ACA00FD9D8F /* Review */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AB22470C2A225ACA00FD9D8F /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				AB2246CF2A2257FA00FD9D8F /* ReviewListViewController.swift */,
+				AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +309,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2246D02A2257FA00FD9D8F /* ViewController.swift in Sources */,
+				AB2246D02A2257FA00FD9D8F /* ReviewListViewController.swift in Sources */,
 				AB2246CC2A2257FA00FD9D8F /* AppDelegate.swift in Sources */,
+				AB22470A2A225AB300FD9D8F /* ReviewListPresenter.swift in Sources */,
 				AB2246CE2A2257FA00FD9D8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
