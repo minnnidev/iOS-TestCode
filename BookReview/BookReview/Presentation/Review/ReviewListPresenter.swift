@@ -5,7 +5,7 @@
 //  Created by 김민 on 2023/05/28.
 //
 
-import Foundation
+import UIKit
 
 protocol ReviewListProtocol {
     func setBackgroundColor()
@@ -13,7 +13,7 @@ protocol ReviewListProtocol {
     func setLayout()
 }
 
-final class ReviewListPresenter {
+final class ReviewListPresenter: NSObject {
     
     // MARK: - Properties
     
@@ -34,5 +34,19 @@ extension ReviewListPresenter {
         viewController.setBackgroundColor()
         viewController.setNavigationBar()
         viewController.setLayout()
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ReviewListPresenter: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        return cell
     }
 }

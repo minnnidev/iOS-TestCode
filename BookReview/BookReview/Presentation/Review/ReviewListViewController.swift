@@ -14,10 +14,11 @@ final class ReviewListViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let reviewTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var reviewTableView: UITableView = {
+        let tableView = UITableView()
         tableView.backgroundColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = presenter
         return tableView
     }()
     
