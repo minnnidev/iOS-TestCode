@@ -105,8 +105,7 @@
 		AB2246CA2A2257FA00FD9D8F /* BookReview */ = {
 			isa = PBXGroup;
 			children = (
-				AB2246CB2A2257FA00FD9D8F /* AppDelegate.swift */,
-				AB2246CD2A2257FA00FD9D8F /* SceneDelegate.swift */,
+				AB2247072A2259AC00FD9D8F /* Application */,
 				AB2246CF2A2257FA00FD9D8F /* ViewController.swift */,
 				AB2246D42A2257FB00FD9D8F /* Assets.xcassets */,
 				AB2246D62A2257FB00FD9D8F /* LaunchScreen.storyboard */,
@@ -130,6 +129,15 @@
 				AB2246EE2A2257FB00FD9D8F /* BookReviewUITestsLaunchTests.swift */,
 			);
 			path = BookReviewUITests;
+			sourceTree = "<group>";
+		};
+		AB2247072A2259AC00FD9D8F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AB2246CB2A2257FA00FD9D8F /* AppDelegate.swift */,
+				AB2246CD2A2257FA00FD9D8F /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
