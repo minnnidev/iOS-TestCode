@@ -11,7 +11,11 @@ protocol ReviewListProtocol { }
 
 final class ReviewListPresenter {
     
+    // MARK: - Properties
+    
     private let viewController: ReviewListProtocol
+    
+    // MARK: - Initializer
     
     init(viewController: ReviewListProtocol) {
         self.viewController = viewController
