@@ -17,10 +17,18 @@ final class ReviewListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .yellow
+
+        setLayout()
     }
 }
 
+extension ReviewListViewController {
+    
+    // MARK: - Custom Methods
+    
+    private func setLayout() {
+        view.backgroundColor = .white
+    }
+}
 
 extension ReviewListViewController: ReviewListProtocol { }
