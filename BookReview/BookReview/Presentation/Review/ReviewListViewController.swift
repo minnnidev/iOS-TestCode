@@ -12,6 +12,15 @@ import Then
 
 final class ReviewListViewController: UIViewController {
     
+    // MARK: - UI Components
+    
+    private let reviewTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .clear
+        return tableView
+    }()
+    
     // MARK: - Properties
     
     private lazy var presenter = ReviewListPresenter(viewController: self)
@@ -20,41 +29,37 @@ final class ReviewListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setBackgroundColor()
-        setLayout()
-        setNavigationBar()
+        
+        presenter.viewDidLoad()
     }
 }
 
-extension ReviewListViewController {
+// MARK: - ReviewListProtocol
+
+extension ReviewListViewController: ReviewListProtocol {
     
-    // MARK: - Custom Methods
-    
-    private func setBackgroundColor() {
+    func setBackgroundColor() {
         view.backgroundColor = .white
     }
     
-    private func setLayout() {
-        
-    }
-    
-    private func setNavigationBar() {
-        let plusButton = UIBarButtonItem(
-            image: UIImage(systemName: "plus"),
-            style: .plain, target: self,
-            action: #selector(plusButtonDidTap))
-        navigationItem.rightBarButtonItem = plusButton
+    func setNavigationBar() {
         navigationItem.title = "도서 리뷰"
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let plusButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain, target: self,
+            action: nil)
+        navigationItem.rightBarButtonItem = plusButton
     }
     
-    // MARK: - @objc Methods
-    
-    @objc private func plusButtonDidTap() {
-        print("플러스 버튼 누름")
+    func setLayout() {
+        view.addSubview(reviewTableView)
+        
+        reviewTableView.snp.makeConstraints {
+            $0.top.left.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
     }
 }
-
-extension ReviewListViewController: ReviewListProtocol { }

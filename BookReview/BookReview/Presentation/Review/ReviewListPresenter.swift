@@ -7,7 +7,11 @@
 
 import Foundation
 
-protocol ReviewListProtocol { }
+protocol ReviewListProtocol {
+    func setBackgroundColor()
+    func setNavigationBar()
+    func setLayout()
+}
 
 final class ReviewListPresenter {
     
@@ -19,5 +23,16 @@ final class ReviewListPresenter {
     
     init(viewController: ReviewListProtocol) {
         self.viewController = viewController
+    }
+}
+
+extension ReviewListPresenter {
+    
+    // MARK: - Custom Methods
+    
+    func viewDidLoad() {
+        viewController.setBackgroundColor()
+        viewController.setNavigationBar()
+        viewController.setLayout()
     }
 }
