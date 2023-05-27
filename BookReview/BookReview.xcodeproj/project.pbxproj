@@ -20,6 +20,7 @@
 		AB2247032A22591E00FD9D8F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB2247022A22591E00FD9D8F /* Alamofire */; };
 		AB2247062A22592A00FD9D8F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB2247052A22592A00FD9D8F /* Kingfisher */; };
 		AB22470A2A225AB300FD9D8F /* ReviewListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */; };
+		AB2247102A2263EA00FD9D8F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22470F2A2263EA00FD9D8F /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		AB2246EC2A2257FB00FD9D8F /* BookReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITests.swift; sourceTree = "<group>"; };
 		AB2246EE2A2257FB00FD9D8F /* BookReviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenter.swift; sourceTree = "<group>"; };
+		AB22470F2A2263EA00FD9D8F /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		AB2246CA2A2257FA00FD9D8F /* BookReview */ = {
 			isa = PBXGroup;
 			children = (
+				AB22470D2A2263DC00FD9D8F /* Global */,
 				AB2247072A2259AC00FD9D8F /* Application */,
 				AB2247082A225A5200FD9D8F /* Resource */,
 				AB22470B2A225ABD00FD9D8F /* Presentation */,
@@ -165,6 +168,22 @@
 				AB2247092A225AB300FD9D8F /* ReviewListPresenter.swift */,
 			);
 			path = Review;
+			sourceTree = "<group>";
+		};
+		AB22470D2A2263DC00FD9D8F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				AB22470E2A2263E400FD9D8F /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		AB22470E2A2263E400FD9D8F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AB22470F2A2263EA00FD9D8F /* UIView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +332,7 @@
 				AB2246CC2A2257FA00FD9D8F /* AppDelegate.swift in Sources */,
 				AB22470A2A225AB300FD9D8F /* ReviewListPresenter.swift in Sources */,
 				AB2246CE2A2257FA00FD9D8F /* SceneDelegate.swift in Sources */,
+				AB2247102A2263EA00FD9D8F /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

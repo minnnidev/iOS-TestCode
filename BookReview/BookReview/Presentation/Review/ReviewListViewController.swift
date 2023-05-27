@@ -7,7 +7,20 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 final class ReviewListViewController: UIViewController {
+    
+    // MARK: - UI Components
+    
+    private lazy var reviewTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = presenter
+        return tableView
+    }()
     
     // MARK: - Properties
     
@@ -17,18 +30,37 @@ final class ReviewListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setLayout()
+        
+        presenter.viewDidLoad()
     }
 }
 
-extension ReviewListViewController {
+// MARK: - ReviewListProtocol
+
+extension ReviewListViewController: ReviewListProtocol {
     
-    // MARK: - Custom Methods
-    
-    private func setLayout() {
+    func setBackgroundColor() {
         view.backgroundColor = .white
     }
+    
+    func setNavigationBar() {
+        navigationItem.title = "도서 리뷰"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let plusButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain, target: self,
+            action: nil)
+        navigationItem.rightBarButtonItem = plusButton
+    }
+    
+    func setLayout() {
+        view.addSubview(reviewTableView)
+        
+        reviewTableView.snp.makeConstraints {
+            $0.top.left.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
+    }
 }
-
-extension ReviewListViewController: ReviewListProtocol { }

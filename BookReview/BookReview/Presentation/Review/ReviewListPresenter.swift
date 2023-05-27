@@ -5,11 +5,15 @@
 //  Created by 김민 on 2023/05/28.
 //
 
-import Foundation
+import UIKit
 
-protocol ReviewListProtocol { }
+protocol ReviewListProtocol {
+    func setBackgroundColor()
+    func setNavigationBar()
+    func setLayout()
+}
 
-final class ReviewListPresenter {
+final class ReviewListPresenter: NSObject {
     
     // MARK: - Properties
     
@@ -19,5 +23,30 @@ final class ReviewListPresenter {
     
     init(viewController: ReviewListProtocol) {
         self.viewController = viewController
+    }
+}
+
+extension ReviewListPresenter {
+    
+    // MARK: - Custom Methods
+    
+    func viewDidLoad() {
+        viewController.setBackgroundColor()
+        viewController.setNavigationBar()
+        viewController.setLayout()
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ReviewListPresenter: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        return cell
     }
 }
