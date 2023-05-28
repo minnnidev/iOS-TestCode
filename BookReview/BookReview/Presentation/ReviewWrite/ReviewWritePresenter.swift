@@ -11,6 +11,7 @@ protocol ReviewWriteProtocol {
     func setBackgroundColor()
     func setNavigationBar()
     func showCloseAlertSheet()
+    func close()
 }
 
 final class ReviewWritePresenter {
@@ -35,5 +36,10 @@ extension ReviewWritePresenter {
     
     func closeButtonDidTap() {
         viewController.showCloseAlertSheet()
+    }
+    
+    func saveButtonDidTap() {
+        // TODO: - 유저가 작성한 도서 리뷰를 UserDefaults로 저장하기
+        viewController.close()
     }
 }

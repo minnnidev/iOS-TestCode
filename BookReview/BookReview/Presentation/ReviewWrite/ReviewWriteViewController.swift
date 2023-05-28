@@ -43,7 +43,7 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
             title: "Save",
             style: .plain,
             target: self,
-            action: nil
+            action: #selector(saveButtonDidTap)
         )
         
         navigationItem.leftBarButtonItem = closeButton
@@ -67,6 +67,10 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         
         present(alert, animated: true)
     }
+    
+    func close() {
+        dismiss(animated: true)
+    }
 }
 
 private extension ReviewWriteViewController {
@@ -75,5 +79,9 @@ private extension ReviewWriteViewController {
     
     @objc private func closeButtonDidTap() {
         presenter.closeButtonDidTap()
+    }
+    
+    @objc private func saveButtonDidTap() {
+        presenter.saveButtonDidTap()
     }
 }
