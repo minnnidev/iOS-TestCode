@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
+
 final class ReviewListViewController: UIViewController {
     
     // MARK: - UI Components
@@ -27,6 +28,12 @@ final class ReviewListViewController: UIViewController {
     private lazy var presenter = ReviewListPresenter(viewController: self)
     
     // MARK: - View Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,8 @@ final class ReviewListViewController: UIViewController {
 
 extension ReviewListViewController: ReviewListProtocol {
     
+    // MARK: - Custom Methods
+    
     func setBackgroundColor() {
         view.backgroundColor = .white
     }
@@ -50,8 +59,9 @@ extension ReviewListViewController: ReviewListProtocol {
         
         let plusButton = UIBarButtonItem(
             image: UIImage(systemName: "plus"),
-            style: .plain, target: self,
-            action: nil)
+            style: .plain,
+            target: self,
+            action: #selector(plusButtonDidTap))
         navigationItem.rightBarButtonItem = plusButton
     }
     
@@ -62,5 +72,24 @@ extension ReviewListViewController: ReviewListProtocol {
             $0.top.left.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    func presentToReviewWriteVC() {
+        let vc = UINavigationController(rootViewController: ReviewWriteViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    func reloadTableView() {
+        reviewTableView.reloadData()
+    }
+}
+
+private extension ReviewListViewController {
+    
+    // MARK: - @objc Methods
+    
+    @objc private func plusButtonDidTap() {
+        presenter.plusButtonDidTap()
     }
 }

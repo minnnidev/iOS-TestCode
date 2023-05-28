@@ -11,6 +11,8 @@ protocol ReviewListProtocol {
     func setBackgroundColor()
     func setNavigationBar()
     func setLayout()
+    func presentToReviewWriteVC()
+    func reloadTableView()
 }
 
 final class ReviewListPresenter: NSObject {
@@ -30,10 +32,19 @@ extension ReviewListPresenter {
     
     // MARK: - Custom Methods
     
+    func viewWillAppear() {
+        // TODO: - UserDefaults로 내용 업데이트
+        viewController.reloadTableView()
+    }
+    
     func viewDidLoad() {
         viewController.setBackgroundColor()
         viewController.setNavigationBar()
         viewController.setLayout()
+    }
+    
+    func plusButtonDidTap() {
+        viewController.presentToReviewWriteVC()
     }
 }
 
