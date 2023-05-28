@@ -11,6 +11,7 @@ protocol ReviewListProtocol {
     func setBackgroundColor()
     func setNavigationBar()
     func setLayout()
+    func presentToReviewWriteVC()
 }
 
 final class ReviewListPresenter: NSObject {
@@ -34,6 +35,10 @@ extension ReviewListPresenter {
         viewController.setBackgroundColor()
         viewController.setNavigationBar()
         viewController.setLayout()
+    }
+    
+    func plusButtonDidTap() {
+        viewController.presentToReviewWriteVC()
     }
 }
 

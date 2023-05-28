@@ -7,7 +7,11 @@
 
 import UIKit
 
-protocol ReviewWriteProtocol { }
+protocol ReviewWriteProtocol {
+    func setBackgroundColor()
+    func setNavigationBar()
+    func showCloseAlertSheet()
+}
 
 final class ReviewWritePresenter {
     
@@ -22,3 +26,14 @@ final class ReviewWritePresenter {
     }
 }
 
+extension ReviewWritePresenter {
+    
+    func viewDidLoad() {
+        viewController.setBackgroundColor()
+        viewController.setNavigationBar()
+    }
+    
+    func closeButtonDidTap() {
+        viewController.showCloseAlertSheet()
+    }
+}
