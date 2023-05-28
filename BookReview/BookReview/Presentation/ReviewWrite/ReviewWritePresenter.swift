@@ -10,6 +10,7 @@ import UIKit
 protocol ReviewWriteProtocol {
     func setBackgroundColor()
     func setNavigationBar()
+    func setLayout()
     func showCloseAlertSheet()
     func close()
 }
@@ -32,6 +33,7 @@ extension ReviewWritePresenter {
     func viewDidLoad() {
         viewController.setBackgroundColor()
         viewController.setNavigationBar()
+        viewController.setLayout()
     }
     
     func closeButtonDidTap() {

@@ -28,6 +28,12 @@ final class ReviewListViewController: UIViewController {
     private lazy var presenter = ReviewListPresenter(viewController: self)
     
     // MARK: - View Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.viewWillAppear()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +78,10 @@ extension ReviewListViewController: ReviewListProtocol {
         let vc = UINavigationController(rootViewController: ReviewWriteViewController())
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    func reloadTableView() {
+        reviewTableView.reloadData()
     }
 }
 
