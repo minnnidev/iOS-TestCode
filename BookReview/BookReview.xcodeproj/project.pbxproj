@@ -33,6 +33,7 @@
 		ABACB3302A24E3BC00E79B90 /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB32F2A24E3BC00E79B90 /* BookReview.swift */; };
 		ABACB3322A24FC3300E79B90 /* MockReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3312A24FC3300E79B90 /* MockReviewListViewController.swift */; };
 		ABACB3342A24FC4000E79B90 /* MockUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3332A24FC4000E79B90 /* MockUserDefaultsManager.swift */; };
+		ABACB33C2A250FC600E79B90 /* ReviewWrtiePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB33B2A250FC600E79B90 /* ReviewWrtiePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		ABACB3312A24FC3300E79B90 /* MockReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListViewController.swift; sourceTree = "<group>"; };
 		ABACB3332A24FC4000E79B90 /* MockUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManager.swift; sourceTree = "<group>"; };
 		ABACB33A2A25018400E79B90 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		ABACB33B2A250FC600E79B90 /* ReviewWrtiePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWrtiePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2246E22A2257FB00FD9D8F /* ReviewListPresenterTests.swift */,
+				ABACB33B2A250FC600E79B90 /* ReviewWrtiePresenterTests.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			files = (
 				ABACB3322A24FC3300E79B90 /* MockReviewListViewController.swift in Sources */,
 				AB2246E32A2257FB00FD9D8F /* ReviewListPresenterTests.swift in Sources */,
+				ABACB33C2A250FC600E79B90 /* ReviewWrtiePresenterTests.swift in Sources */,
 				ABACB3342A24FC4000E79B90 /* MockUserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
