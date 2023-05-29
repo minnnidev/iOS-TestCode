@@ -25,7 +25,7 @@ final class ReviewWriteViewController: UIViewController {
     
     private lazy var contentTextView = UITextView().then {
         $0.textColor = .lightGray
-        $0.text = "내용을 입력해 주세요."
+        $0.text = presenter.contentsTextViewPlaceHolderText
         $0.font = .systemFont(ofSize: 16, weight: .medium)
         $0.delegate = self
     }
@@ -129,6 +129,7 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
         bookTitleButton.setTitleColor(.black, for: .normal)
         bookImageView.kf.setImage(with: imageURL)
     }
+
 }
 
 private extension ReviewWriteViewController {
@@ -140,7 +141,7 @@ private extension ReviewWriteViewController {
     }
     
     @objc private func saveButtonDidTap() {
-        presenter.saveButtonDidTap()
+        presenter.saveButtonDidTap(content: contentTextView.text)
     }
     
     @objc private func bookTitleButtonDidTap() {

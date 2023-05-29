@@ -22,6 +22,9 @@ final class ReviewWritePresenter {
     // MARK: - Properties
     
     private let viewController: ReviewWriteProtocol
+    private let userDefaultsManager = UserDefaultsManager()
+    private var book: Book?
+    let contentsTextViewPlaceHolderText = "내용을 입력해주세요."
     
     // MARK: - Initializer
     
@@ -42,8 +45,18 @@ extension ReviewWritePresenter {
         viewController.showCloseAlertSheet()
     }
     
-    func saveButtonDidTap() {
-        // TODO: - 유저가 작성한 도서 리뷰를 UserDefaults로 저장하기
+    func saveButtonDidTap(content: String?) {
+        guard let book = book,
+              let content = content,
+              content != contentsTextViewPlaceHolderText
+        else { return }
+        
+        let bookReview = BookReview(
+            title: book.title,
+            content: content,
+            imageURL: book.imageURL
+        )
+        userDefaultsManager.saveReview(bookReview)
         viewController.close()
     }
     
@@ -57,6 +70,7 @@ extension ReviewWritePresenter {
 extension ReviewWritePresenter: SearchBookDelegate {
     
     func selectBook(_ book: Book) {
+        self.book = book
         viewController.updateViews(title: book.title, imageURL: book.imageURL)
     }
 }
