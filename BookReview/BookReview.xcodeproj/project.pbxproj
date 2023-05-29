@@ -33,6 +33,7 @@
 		ABACB3302A24E3BC00E79B90 /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB32F2A24E3BC00E79B90 /* BookReview.swift */; };
 		ABACB3322A24FC3300E79B90 /* MockReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3312A24FC3300E79B90 /* MockReviewListViewController.swift */; };
 		ABACB3342A24FC4000E79B90 /* MockUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3332A24FC4000E79B90 /* MockUserDefaultsManager.swift */; };
+		ABACB3392A24FEF100E79B90 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3382A24FEF100E79B90 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		ABACB32F2A24E3BC00E79B90 /* BookReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReview.swift; sourceTree = "<group>"; };
 		ABACB3312A24FC3300E79B90 /* MockReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListViewController.swift; sourceTree = "<group>"; };
 		ABACB3332A24FC4000E79B90 /* MockUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManager.swift; sourceTree = "<group>"; };
+		ABACB3382A24FEF100E79B90 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		AB22470D2A2263DC00FD9D8F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				ABACB3372A24FECC00E79B90 /* Constant */,
 				AB22470E2A2263E400FD9D8F /* Extension */,
 			);
 			path = Global;
@@ -268,6 +271,14 @@
 				ABACB3332A24FC4000E79B90 /* MockUserDefaultsManager.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		ABACB3372A24FECC00E79B90 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				ABACB3382A24FEF100E79B90 /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +426,7 @@
 				AB2246D02A2257FA00FD9D8F /* ReviewListViewController.swift in Sources */,
 				ABACB32C2A24CECE00E79B90 /* BookSearchManager.swift in Sources */,
 				AB6856412A246CF600CE8A2C /* SearchBookViewController.swift in Sources */,
+				ABACB3392A24FEF100E79B90 /* Constant.swift in Sources */,
 				ABACB3252A24CD2400E79B90 /* BookSearchRequestModel.swift in Sources */,
 				AB2246CC2A2257FA00FD9D8F /* AppDelegate.swift in Sources */,
 				ABACB3302A24E3BC00E79B90 /* BookReview.swift in Sources */,
