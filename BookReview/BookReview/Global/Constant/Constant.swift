@@ -8,6 +8,6 @@
 import Foundation
 
 struct Constant {
-    let naverClientId = "tGy9ShDXd1Zg0KT1rNnE"
-    let naverClientSecret = "E0VlZAo29E"
+    let naverClientId = ""
+    let naverClientSecret = ""
 }
