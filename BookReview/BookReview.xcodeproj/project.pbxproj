@@ -25,6 +25,10 @@
 		AB2247152A231F7400FD9D8F /* ReviewWritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2247142A231F7400FD9D8F /* ReviewWritePresenter.swift */; };
 		AB6856412A246CF600CE8A2C /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6856402A246CF600CE8A2C /* SearchBookViewController.swift */; };
 		AB6856432A246D0400CE8A2C /* SearchBookPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6856422A246D0400CE8A2C /* SearchBookPresenter.swift */; };
+		ABACB3252A24CD2400E79B90 /* BookSearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3242A24CD2300E79B90 /* BookSearchRequestModel.swift */; };
+		ABACB3272A24CDDA00E79B90 /* BookSearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3262A24CDDA00E79B90 /* BookSearchResponseModel.swift */; };
+		ABACB3292A24CE8800E79B90 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB3282A24CE8800E79B90 /* Book.swift */; };
+		ABACB32C2A24CECE00E79B90 /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABACB32B2A24CECE00E79B90 /* BookSearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		AB2247142A231F7400FD9D8F /* ReviewWritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritePresenter.swift; sourceTree = "<group>"; };
 		AB6856402A246CF600CE8A2C /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		AB6856422A246D0400CE8A2C /* SearchBookPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookPresenter.swift; sourceTree = "<group>"; };
+		ABACB3242A24CD2300E79B90 /* BookSearchRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchRequestModel.swift; sourceTree = "<group>"; };
+		ABACB3262A24CDDA00E79B90 /* BookSearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchResponseModel.swift; sourceTree = "<group>"; };
+		ABACB3282A24CE8800E79B90 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		ABACB32B2A24CECE00E79B90 /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,8 @@
 				AB22470D2A2263DC00FD9D8F /* Global */,
 				AB2247072A2259AC00FD9D8F /* Application */,
 				AB2247082A225A5200FD9D8F /* Resource */,
+				ABACB3232A24CD0D00E79B90 /* Model */,
+				ABACB32A2A24CEB900E79B90 /* Manager */,
 				AB22470B2A225ABD00FD9D8F /* Presentation */,
 				AB2246D92A2257FB00FD9D8F /* Info.plist */,
 			);
@@ -212,6 +222,24 @@
 				AB6856422A246D0400CE8A2C /* SearchBookPresenter.swift */,
 			);
 			path = SearchBook;
+			sourceTree = "<group>";
+		};
+		ABACB3232A24CD0D00E79B90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABACB3282A24CE8800E79B90 /* Book.swift */,
+				ABACB3242A24CD2300E79B90 /* BookSearchRequestModel.swift */,
+				ABACB3262A24CDDA00E79B90 /* BookSearchResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABACB32A2A24CEB900E79B90 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ABACB32B2A24CECE00E79B90 /* BookSearchManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,11 +385,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2246D02A2257FA00FD9D8F /* ReviewListViewController.swift in Sources */,
+				ABACB32C2A24CECE00E79B90 /* BookSearchManager.swift in Sources */,
 				AB6856412A246CF600CE8A2C /* SearchBookViewController.swift in Sources */,
+				ABACB3252A24CD2400E79B90 /* BookSearchRequestModel.swift in Sources */,
 				AB2246CC2A2257FA00FD9D8F /* AppDelegate.swift in Sources */,
 				AB2247132A231F6B00FD9D8F /* ReviewWriteViewController.swift in Sources */,
 				AB22470A2A225AB300FD9D8F /* ReviewListPresenter.swift in Sources */,
 				AB2246CE2A2257FA00FD9D8F /* SceneDelegate.swift in Sources */,
+				ABACB3272A24CDDA00E79B90 /* BookSearchResponseModel.swift in Sources */,
+				ABACB3292A24CE8800E79B90 /* Book.swift in Sources */,
 				AB2247152A231F7400FD9D8F /* ReviewWritePresenter.swift in Sources */,
 				AB2247102A2263EA00FD9D8F /* UIView+.swift in Sources */,
 				AB6856432A246D0400CE8A2C /* SearchBookPresenter.swift in Sources */,

@@ -25,8 +25,21 @@ final class SearchBookViewController: UIViewController {
     
     // MARK: - Properties
     
-    private lazy var presenter = SearchBookPresenter(viewController: self)
-
+    private lazy var presenter = SearchBookPresenter(viewController: self, delegate: searchBookDelegate)
+    private let searchBookDelegate: SearchBookDelegate
+    
+    // MARK: - Initializer
+    
+    init(searchBookDelegate: SearchBookDelegate) {
+        self.searchBookDelegate = searchBookDelegate
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -59,6 +72,11 @@ extension SearchBookViewController: SearchBookProtocol {
     }
     
     func dismiss() {
+        navigationItem.searchController?.dismiss(animated: true)
         dismiss(animated: true)
+    }
+    
+    func reloadTableView() {
+        bookTableView.reloadData()
     }
 }

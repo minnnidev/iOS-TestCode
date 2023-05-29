@@ -14,6 +14,7 @@ protocol ReviewWriteProtocol {
     func showCloseAlertSheet()
     func close()
     func presentToSearchBookVC()
+    func updateViews(title: String, imageURL: URL?)
 }
 
 final class ReviewWritePresenter {
@@ -48,5 +49,14 @@ extension ReviewWritePresenter {
     
     func bookTitleButtonDidTap() {
         viewController.presentToSearchBookVC()
+    }
+}
+
+// MARK: - SearchBookDelegate
+
+extension ReviewWritePresenter: SearchBookDelegate {
+    
+    func selectBook(_ book: Book) {
+        viewController.updateViews(title: book.title, imageURL: book.imageURL)
     }
 }
