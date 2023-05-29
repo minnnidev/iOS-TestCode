@@ -16,8 +16,8 @@ struct BookSearchManager {
         let parameters = BookSearchRequestModel(query: keyword)
         
         let headers: HTTPHeaders = [
-            "X-Naver-Client-Id":"tGy9ShDXd1Zg0KT1rNnE",
-            "X-Naver-Client-Secret":"E0VlZAo29E"
+            "X-Naver-Client-Id": Constant().naverClientId,
+            "X-Naver-Client-Secret": Constant().naverClientSecret
         ]
         
         AF.request(url, method: .get, parameters: parameters, headers: headers)
