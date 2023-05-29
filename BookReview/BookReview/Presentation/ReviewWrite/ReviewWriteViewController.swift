@@ -14,11 +14,12 @@ final class ReviewWriteViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let bookTitleButton = UIButton().then {
+    private lazy var bookTitleButton = UIButton().then {
         $0.setTitle("책 제목", for: .normal)
         $0.setTitleColor(.lightGray, for: .normal)
         $0.contentHorizontalAlignment = .leading
         $0.titleLabel?.font = .systemFont(ofSize: 23, weight: .bold)
+        $0.addTarget(self, action: #selector(bookTitleButtonDidTap), for: .touchUpInside)
     }
     
     private lazy var contentTextView = UITextView().then {
@@ -116,6 +117,11 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
     func close() {
         dismiss(animated: true)
     }
+    
+    func presentToSearchBookVC() {
+        let vc = UINavigationController(rootViewController: SearchBookViewController())
+        present(vc, animated: true)
+    }
 }
 
 private extension ReviewWriteViewController {
@@ -128,6 +134,10 @@ private extension ReviewWriteViewController {
     
     @objc private func saveButtonDidTap() {
         presenter.saveButtonDidTap()
+    }
+    
+    @objc private func bookTitleButtonDidTap() {
+        presenter.bookTitleButtonDidTap()
     }
 }
 
