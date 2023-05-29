@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 protocol ReviewListProtocol {
     func setBackgroundColor()
     func setNavigationBar()
@@ -20,6 +22,8 @@ final class ReviewListPresenter: NSObject {
     // MARK: - Properties
     
     private let viewController: ReviewListProtocol
+    private let userDefaultsManager = UserDefaultsManager()
+    private var bookReviews: [BookReview] = []
     
     // MARK: - Initializer
     
@@ -33,7 +37,7 @@ extension ReviewListPresenter {
     // MARK: - Custom Methods
     
     func viewWillAppear() {
-        // TODO: - UserDefaults로 내용 업데이트
+        bookReviews = userDefaultsManager.getReviews()
         viewController.reloadTableView()
     }
     
@@ -53,11 +57,19 @@ extension ReviewListPresenter {
 extension ReviewListPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return bookReviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let review = bookReviews[indexPath.row]
+        cell.textLabel?.text = review.title
+        cell.detailTextLabel?.text = review.content
+        cell.imageView?.kf.setImage(with: review.imageURL, placeholder: .none, completionHandler: { _ in
+            cell.setNeedsLayout()
+            // 사진이 업로드되면 한번 더 업데이트하도록
+        })
+        cell.selectionStyle = .none
         return cell
     }
 }
